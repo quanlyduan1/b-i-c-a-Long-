@@ -1,0 +1,74 @@
+<div [@routerTransition] class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>SB Admin BS4 Angular9</h1>
+            <form role="form" (ngSubmit)="Submit()"#RegisterForm="ngForm">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Full Name' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text" [(ngModel)]="user.userName" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Email' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text" [(ngModel)]="user.emailId" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'phone' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text" [(ngModel)]="user.phone" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'dateOfBirth' | translate"
+                            class="form-control input-underline input-lg"
+                            type="date" [(ngModel)]="user.dateOfBirth" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Address' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"[(ngModel)]="user.adsress" name="user"
+                        /> 
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Nationality' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text" [(ngModel)]="user.nationality" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Password' | translate"
+                            class="form-control input-underline input-lg"
+                            type="password" [(ngModel)]="user.password" name="user"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-3">        
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="handleFileInput($event.target.files)" />
+                            <label class="custom-file-label" for="inputGroupFile01" >Choose file...</label>
+                        </div>
+                        <div class="form-ground">
+                            <img [src]="imageUrl" class="img-thumbnail"  style="width:250px;height:200px">
+                        </div>
+                    </div>
+       
+                </div>
+                <button class="btn rounded-btn" type = "submit">Register</button>
+                &nbsp;
+                <button class="btn rounded-btn" [routerLink]="['/login']" >Login</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date Of Birth</th>
+        <th>Address</th>
+        <th>Nationnality</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of user">
+        <td>{{person.userName}}</td>
+        <td>{{person.emailId}}</td>
+        <td>{{person.phone}}</td>
+        <td>{{person.dateOfBirth}}</td>
+        <td>{{person.adsress}}</td>
+        <td>{{person.nationality}}</td>
+        <td>
+          <button (click)=UpdateUser(person.id) class="btn btn-info">Update</button>
+          <button (click)=deleteUser(person.id) class="btn btn-danger" style="margin-left: 10px">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,76 @@
+<a [routerLink]="['/user']" class="btn rounded-btn">{{ 'trở về' | translate }}</a>
+<div class="container">
+    <div class="row">
+      <div class="col s8 offset-2">
+        <div class="card-panel teal lighten-2">
+          <h4 class="center white-text">Image Library</h4>
+        </div>
+          <ng-container *ngIf="this.formUser">
+            <form class="was-validated" (ngSubmit)="Submit()" [formGroup]="this.formUser">
+              <div class="form-ground">
+                <div class="form-ground"> 
+                  <label> Email </label>
+                  <input type="text" class="form-control" formControlName="emailId" required>
+                </div>
+                <div class="form-ground"> 
+                  <label> UserName </label>
+                  <input type="text" class="form-control" formControlName="userName" required>
+                </div>
+                <div class="form-ground"> 
+                  <label> Password </label>
+                  <input type="text" class="form-control" formControlName="password" required>
+                </div>
+                <div class="form-ground"> 
+                  <label> Phone </label>
+                  <input type="text" class="form-control" formControlName="phone" required>
+                </div>
+                <div class="form-ground"> 
+                  <label> date Of Birth </label>
+                  <input type="date" class="form-control" formControlName="dateOfBirth" required>
+                </div>
+                <div class="form-ground"> 
+                  <label> Adsress </label>
+                  <input type="text" class="form-control" formControlName="adsress" required>
+                </div>
+                <!-- <div class="form-ground"> 
+                  <label> Nationnality </label>
+                  <input type="text" class="form-control" formControlName="nationality" required>
+                </div> -->
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Nationnality</label>
+                  <select class="form-control" formControlName="nationality" id="exampleFormControlSelect1">
+                    <option>Việt Nam</option>
+                    <option>Hoa Kì</option>
+                    <option>Nga</option>
+                    <option>Trung Quốc</option>
+                    <option>Ấn Độ</option>
+                  </select>
+                </div>
+                <div class="form-group"  *ngIf="role === 1">
+                  <label for="role_id">Roles</label>
+                  <select class="form-control" required formControlName="role_id">
+                      <option *ngFor="let roleItems of listRole" value="{{roleItems.id}}">
+                        {{roleItems?.name}}
+                      </option>
+                  </select>
+                </div><hr>
+                <div class="form-group">
+                  <label>Image</label>
+                  <div class="custom-file mb-3">
+                    <input type="file"  class="custom-file-input" id="validatedCustomFile" accept="image/*" (change)="handleFileInput($event.target.files)" required>
+                    <label class="custom-file-label" for="validatedCustomFile" >Choose file...</label>
+                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                  </div>
+                  <div class="form-ground">
+                    <img [src]="imageUrl" class="img-thumbnail"  style="width:250px;height:200px; margin-right:20px;">
+                  </div>
+                </div>
+                <div class="form-ground">
+                  <button class = "btn btn-success" type = "submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </ng-container>
+      </div>
+    </div>
+  <!-- </div> -->

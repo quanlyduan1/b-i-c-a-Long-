@@ -1,0 +1,22 @@
+  <table class="table">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor ="let item of talks">
+              <td>
+                  {{item.name}}
+              </td>
+              <td>
+                  {{item.email}}
+              </td>
+              <td>
+                  {{item.message}}
+              </td>
+          </tr>
+      </tbody>
+  </table>

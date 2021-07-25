@@ -1,0 +1,245 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="container">
+    <img src="../../assets/images/logo/logo.png" alt="">
+    <ul class="nav">
+      <li class="nav-item">
+        <a [routerLink]="['/hometravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw w3-margin-right" aria-hidden="true"></i>HOME</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/abouttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/commenttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>COMMENT</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a [routerLink]="['/login']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGIN</a>
+      </li>
+      <li  *ngIf="user">
+        <a (click)="onLoggedout()" href="http://localhost:4200/hometravel" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section id="home" class="about-us">
+  <div class="container">
+    <div class="about-us-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="single-about-us">
+            <div class="about-us-txt">
+              <h2>
+                Blog Travel Home
+              </h2>
+              <h2><h3>Cộng đồng du lịch thân thiện nhất thế giới! Cũng như chia sẻ tài nguyên nhiếp ảnh và hơn thế nữa.</h3></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-0">
+          <div class="single-about-us">
+
+          </div><!--/.single-about-us-->
+        </div><!--/.col-->
+      </div><!--/.row-->
+    </div><!--/.about-us-content-->
+  </div><!--/.container-->
+
+</section>
+
+<section id="" class="">
+  <div class="container">
+    <div class="gallery-details">
+      <div class="gallary-header text-center">
+        <h2>
+          Nổi bật
+        </h2>
+        <p>
+          Top 6 địa điểm ngoài nước được ưa thích nhất
+        </p>
+      </div><!--/.gallery-header-->
+      <div class="gallery-box">
+        <div class="gallery-content">
+            <div class="filtr-container">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="filtr-item">
+                  <img src="../../assets/images/gallary/g1.jpg" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/26">
+                      china
+                    </a>
+                    <p><span>30000000 VND</span><span>7 ngày 6 đêm</span></p>
+                  </div><!-- /.item-title -->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+                <div class="col-md-6">
+                  <div class="filtr-item">
+                  <img src="../../assets/images/gallary/g2.jpg" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/27">
+                      venuzuala
+                    </a>
+                    <p><span>	20000000 VND</span><span>3 ngày 2 đêm</span></p>
+                  </div> <!-- /.item-title-->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+                <div class="col-md-8">
+                  <div class="filtr-item">
+                  <img src="../../assets/images/gallary/g6.jpg" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/28">
+                      turkey
+                    </a>
+                    <p><span>10000000 VND</span><span>4 ngày 3 đêm</span></p>
+                  </div> <!-- /.item-title-->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+                <div class="col-md-4">
+                  <div class="filtr-item">
+                  <img src="assets/images/gallary/g4.jpg" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/29">
+                      australia
+                    </a>
+                    <p><span>60000000 VND</span><span>2 ngày 3 đêm</span></p>
+                  </div> <!-- /.item-title-->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+                <div class="col-md-4">
+                  <div class="filtr-item">
+                  <img src="assets/images/gallary/g5.jpg" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/30">
+                      netharlands
+                    </a>
+                    <p><span>14 tours</span><span>12 places</span></p>
+                  </div> <!-- /.item-title-->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+                <div class="col-md-8">
+                  <div class="filtr-item">
+                  <img src="../../assets/images/gallary/siemreap04.jpg" height="400px" alt="portfolio image"/>
+                  <div class="item-title">
+                    <a href="http://localhost:4200/detailstravel/31">
+                      Angkor Wat
+                    </a>
+                    <p><span>5000000</span><span>2 ngày 3 đêm</span></p>
+                  </div> <!-- /.item-title-->
+                </div><!-- /.filtr-item -->
+                </div><!-- /.col -->
+
+              </div><!-- /.row -->
+
+            </div><!-- /.filtr-container-->
+        </div><!-- /.gallery-content -->
+      </div><!--/.galley-box-->
+    </div><!--/.gallery-details-->
+  </div><!--/.container-->
+
+</section>
+
+
+<section class="discount-offer" >
+  <div class="container">
+    <div class="row">
+        <div class="w3-row-padding">
+          <button class="button" [routerLink]="['/abouttravel']" >xem tất cả</button>
+        </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="row container">
+</div>
+
+<section   class="testemonial">
+  <div class="container">
+
+    <div class="gallary-header text-center">
+      <h2>
+        Blog travel
+      </h2>
+      <p>
+        Nơi có nhiều người ghé nhất.
+      </p>
+
+    </div><!--/.gallery-header-->
+
+    <div class="row">
+
+      <div class="w3-third w3-container w3-margin-bottom" *ngFor="let item of this.blog | paginate:{
+            itemsPerPage:3,
+            currentPage: page}">
+            <img src="./../../../assets/images//{{this.item.image1}}" alt="Snow" style="width:100%; height: 200px;" alt="Norway" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p><b>{{item.placeName}}</b></p>
+              <p>{{item.fareNumber}} VND, {{item.letterFare}}</p>
+              <p>{{item.location}}</p>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<!--subscribe start-->
+<section id="subs" class="subscribe">
+  <div class="container">
+    <div class="subscribe-title text-center">
+      <h2>
+        Blog Travel
+      </h2>
+      <p>
+        giúp bạn có những trải nghiệm tuyệt vời nhất
+      </p>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="custom-input-group">
+            <input type="email" class="form-control" placeholder="Enter your Email Here">
+            <button class="appsLand-btn subscribe-btn">Subscribe</button>
+            <div class="clearfix"></div>
+            <i class="fa fa-envelope"></i>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+</section>
+<!--subscribe end-->
+
+<!-- footer-copyright start -->
+<footer  class="footer-copyright">
+  <div class="container">
+    <br>
+    <div class="foot-icons">
+      <ul class="footer-social-links list-inline list-unstyled row">
+                <li><a href="#" target="_blank" class="foot-icon-bg-1"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+      <p>  << <a href=""> MY HOME  </a>>> </p>
+
+    </div>
+    <div id="scroll-Top">
+      <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+    </div>
+  </div>
+
+</footer>

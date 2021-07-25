@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="container">
+    <img src="../../assets/images/logo/logo.png" alt="">
+    <ul class="nav">
+      <li class="nav-item">
+        <a [routerLink]="['/hometravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw w3-margin-right" aria-hidden="true"></i>HOME</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/abouttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/commenttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>COMMENT</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a [routerLink]="['/login']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGIN</a>
+      </li>
+      <li  *ngIf="user">
+        <a (click)="onLoggedout()" href="http://localhost:4200/hometravel" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<header>
+  <div class="site-blocks-cover overlay" style="background-image: url(../../assets/images/hinh-anh-tour-du-lich-ha-noi-singapore-indonesia-malaysia-bay-vietnam-airlines.jpg);height: 100%;" data-aos="fade" id="home-section">
+
+
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 mt-lg-5 text-center">
+          <h1>{{item.placeName}}</h1>
+          <p class="mb-5">{{item.companyName}}</p>
+          <p class="mb-5">{{item.fareNumber}} VND.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#howitworks-section" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
+  </div> 
+
+  <div class="w3-container">
+  <div class="w3-section w3-bottombar w3-padding-16">
+    <button class="w3-button w3-black"><i class="fa fa-asterisk w3-margin-right" aria-hidden="true"></i>{{item.placeName}}, {{item.fareNumber}} VND.</button>
+  </div>
+  </div>
+</header>
+
+
+    <div class="w3-main">
+    
+    
+    <div class="site-section" id="property-details">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="owl-carousel slide-one-item with-dots">
+                <div><img [src]="urlImage" width="100%" alt="Image" class="img-fluid"></div>
+              </div>
+            </div>
+            <div class="col-lg-5 pl-lg-5 ml-auto">
+              <div class="mb-5">
+                <h3 class="text-black mb-4">{{item.placeName}}</h3>
+                <p>{{item.introduce1}}</p>
+                <p>{{item.introduce2}}</p>
+                <p>Số: {{item.adsressCty}}</p>
+                <p>Email: {{item.emailCty}}</p>
+                <p>Hiện tại: {{item.status}}</p>               
+                <p>Giá vé: {{item.fareNumber}}, {{item.letterFare}}.</p>
+                <!-- <p><a href="#" class="btn btn-primary">Buy Property</a></p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+
+      <div class="w3-container w3-padding-large ">
+        <h4 id="contact"><b>Phản hồi</b></h4>
+          <hr class="w3-opacity">
+          <form action="/action_page.php" target="_blank">
+            <div class="w3-section">
+              <label>Name</label>
+              <input class="w3-input w3-border" type="text" name="Name" required>
+            </div>
+            <div class="w3-section">
+              <label>Email</label>
+              <input class="w3-input w3-border" type="text" name="Email" required>
+            </div>
+            <div class="w3-section">
+              <label>Message</label>
+              <input class="w3-input w3-border" type="text" name="Message" required>
+            </div>
+            <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+          </form>
+      </div>
+  
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-32 w3-dark-grey">
+      <div class="w3-row-padding">
+        <div class="w3-third">
+          <h3>Blog Travel</h3>
+          <hr>
+          <p>Nếu bạn đã từng đi hay sẽ đi và cũng có thể là chuẩn bị, hãy chia sẻ nó với chúng tôi, chúng tôi sẽ làm hài lòng quý vị với những trợ lý tốt nhất.</p>
+          <p><a href="" target="_blank">blogtravel001@gmail.com</a></p>
+        </div>
+      
+        <div class="w3-third">
+          <h3>Blog</h3>
+          <hr>
+          <ul class="w3-ul w3-hoverable">
+            <li class="w3-padding-16">
+              <img src="" class="w3-left w3-margin-right" style="width:50px">
+              <span class="w3-large">Đam mê</span><br>
+              <span>Đó là sự khát khao cháy bỏng để có được một điều gì.</span>
+            </li>
+            <li class="w3-padding-16">
+              <img src="" class="w3-left w3-margin-right" style="width:50px">
+              <span class="w3-large">Thách thức</span><br>
+              <span>Những trở ngại không thể làm khó bạn.</span>
+            </li> 
+          </ul>
+        </div>
+    
+        <div class="w3-third">
+          <h3>Porata</h3>
+          <hr>
+          <div class="w3-row w3-grayscale-min" style="width: 100%;">
+            <div class="w3-quarter">
+              <img src="../../assets/images/hinh-anh-tour-du-lich-ha-noi-singapore-indonesia-malaysia-bay-vietnam-airlines.jpg" alt="Canoeing again" style="width:100%">&nbsp;
+              
+            </div>
+          </div> 
+        </div>
+    
+      </div>
+      </footer>
+      
+      <div class="w3-black w3-center w3-padding-24"><a href="" title="W3.CSS" target="_blank" class="w3-hover-opacity">blogtravel001@gmail.com</a></div>
+  </div>

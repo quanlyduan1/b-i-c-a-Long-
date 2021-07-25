@@ -1,0 +1,52 @@
+<div>
+    <a [routerLink]="['/blogcreate']" class="btn rounded-btn">{{ 'Thêm trang' | translate }}</a>
+</div>
+<div class="card mb-3">
+    <div class="card-header">Bordered table</div>
+    <div class="card-body table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+            <thead>
+                <tr>
+                    <th>Place Name</th>
+                    <th>Location</th>
+                    <th>Company Name</th>
+                    <th>Status</th>
+                    <th>Introduce 1</th>
+                    <th>Introduce 2</th>
+                    <th>Email Cty</th>
+                    <th>Address Cty</th>
+                    <th>Fare Number</th>
+                    <th>Letter Fare</th>
+                    <th>Image 1</th>
+                    <th>Upload</th>
+                    <th>Delete</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of this.blog">
+                    <td>{{item.placeName}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.companyName}}</td>
+                    <td>{{item.status}}</td>
+                    <td><textarea name="" id="" cols="10" rows="1">{{item.introduce1}}</textarea></td>
+                    <td><textarea name="" id="" cols="10" rows="1">{{item.introduce2}}</textarea></td>
+                    <td>{{item.emailCty}}</td>
+                    <td>{{item.adsressCty}}</td>
+                    <td>{{item.fareNumber}} VND</td>
+                    <td>{{item.letterFare}}</td>
+                    <td><img src="./../../../assets/images//{{this.item.image1}}" alt="" width="15" height="25"></td>
+                    <td>
+                      <button class="button" (click)=UpdateBlog(item.id) >Upload</button>
+                    </td>
+                    <td>
+                        <button class="button" (click)=deleteBlog(item.id)>Delete</button>
+                    </td>
+                    <td>
+                      <button class="button" (click)=ViewBlog(item.id)>View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

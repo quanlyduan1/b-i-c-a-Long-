@@ -1,0 +1,57 @@
+<div>
+    <a [routerLink]="['/tables']" class="btn rounded-btn">{{ 'trở về' | translate }}</a>
+</div>
+<form style="box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px; box-sizing: inherit; margin-bottom: 10px; padding: 20px; box-sizing: inherit; line-height: 1.6em; padding: 15px;" 
+class="page" (ngSubmit)="Submit()" [formGroup]="this.formBlog">
+    <div class="form-group">
+        <label for="formGroupExampleInput">Place Name</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="placeName" placeholder="place Name">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">location</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="location" placeholder="location">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Company Name</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="companyName" placeholder="companyName">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">status</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="status" placeholder="status">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">emailCty</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="emailCty" placeholder="Email Cty">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Address</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="adsressCty" placeholder="adsressCty">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">fareNumber</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fareNumber" placeholder="fareNumber">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">letterFare</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="letterFare" placeholder="letterFare">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">introduce 1</label>
+        <textarea class="form-control" placeholder="introduce1" formControlName="introduce1" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">introduce 2</label>
+        <textarea class="form-control" placeholder="introduce2" formControlName="introduce2" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+        <div class="form-group">
+            <label>Image 1</label>
+            <div class="custom-file mb-3">
+              <input type="file"  class="custom-file-input" accept="image/*" (change)="handleFileInput($event.target.files)" required>
+              <label class="custom-file-label" for="validatedCustomFile" >Choose file...</label>
+            </div>
+            <div class="form-ground" >
+              <img [src]="imageUrl" style="width:250px;height:200px"  >
+            </div>
+        </div>
+        <input type="submit" value="Create">
+</form>

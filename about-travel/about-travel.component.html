@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="container">
+    <img src="../../assets/images/logo/logo.png" alt="">
+    <ul class="nav">
+      <li class="nav-item">
+        <a [routerLink]="['/hometravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw w3-margin-right" aria-hidden="true"></i>HOME</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/abouttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/commenttravel']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>COMMENT</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a [routerLink]="['/login']" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGIN</a>
+      </li>
+      <li  *ngIf="user">
+        <a (click)="onLoggedout()" href="http://localhost:4200/hometravel" style="color: #EEEEEE;"  class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-sign-in fa-fw w3-margin-right" aria-hidden="true"></i>LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="about-us">
+  <div class="container">
+    <div class="about-us-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="single-about-us">
+            <div class="about-us-txt">
+              <h2>
+                Travel Beautiful World 
+
+              </h2>
+              <div class="about-btn">
+                <button  class="about-view">
+                  explore now
+                </button>
+              </div><!--/.about-btn-->
+            </div><!--/.about-us-txt-->
+          </div><!--/.single-about-us-->
+        </div><!--/.col-->
+        <div class="col-sm-0">
+          <div class="single-about-us">
+            
+          </div><!--/.single-about-us-->
+        </div><!--/.col-->
+      </div><!--/.row-->
+    </div><!--/.about-us-content-->
+  </div><!--/.container-->
+
+</section>
+<br>
+<div class="w3-main" >
+    <div class="site-section" id="listings-section">
+        <div class="container">  
+          <h1>Tất cả các blog cho bạn tham khảo</h1>
+          <br>
+          <hr>
+          <br>
+          <div class="row">
+            <div class="col-md-9 order-2 order-md-1">
+              <div class="property horizontal d-flex mb-5" *ngFor="let item of this.blog | paginate:{id: 'listing',
+              itemsPerPage:5,
+              currentPage: page,
+              totalItems:totalRecords}">
+                <div class="mr-3 img-entry">
+                  <a (click)=ViewBlog(item.id)><img src="./../../../assets/images//{{this.item.image1}}" style="width: 150px;height: 150px;" alt="Image" class="img-fluid"></a>
+                </div>
+                <div class="prop-details p-3">
+                  <div><a routerLink (click)=ViewBlog(item.id)><strong class="price">{{item.placeName}}</strong></a></div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="w border-r">{{item.fareNumber}} VND</span> 
+                    <span class="w border-r">{{item.letterFare}}</span>
+                    <span class="w"></span>
+                  </div>
+                  <div>{{item.location}}</div>
+                </div>
+              </div>
+            </div>
+            <pagination-controls id="listing" style="text-align: center; " maxSize="5" directionLinks="true"
+            (pageChange)="page=$event"></pagination-controls>
+          </div>
+        </div>
+      </div>
+
+
+    
+  
+      <footer  class="footer-copyright">
+        <div class="container">
+          <br>
+          <div class="foot-icons">
+            <ul class="footer-social-links list-inline list-unstyled row">
+                      <li><a href="#" target="_blank" class="foot-icon-bg-1"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <p>&copy; 2017 <a href="https://www.themesine.com">ThemeSINE</a>. All Right Reserved</p>
+      
+          </div>
+          <div id="scroll-Top">
+            <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+          </div>
+        </div>
+      
+      </footer>
